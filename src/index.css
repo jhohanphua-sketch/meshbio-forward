@@ -155,7 +155,7 @@ All colors MUST be HSL.
   .card-elevated {
     background: var(--gradient-card);
     box-shadow: var(--shadow-soft);
-    @apply p-6 rounded-xl border transition-all duration-300 hover:shadow-lg hover:scale-102;
+    @apply p-6 rounded-xl border transition-all duration-300 hover:shadow-lg hover:scale-105;
   }
 
   .card-feature {
