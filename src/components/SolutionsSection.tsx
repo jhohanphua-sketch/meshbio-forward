@@ -136,13 +136,6 @@ const SolutionsSection = () => {
                     </div>
                     <h4 className="text-xl font-semibold mb-3">{item.step}</h4>
                     <p className="text-muted-foreground">{item.description}</p>
-                    
-                    {/* Arrow connector */}
-                    {index < workflow.length - 1 && (
-                      <div className="hidden md:block absolute top-8 left-full w-full">
-                        <ArrowRight className="h-6 w-6 text-primary mx-auto" />
-                      </div>
-                    )}
                   </motion.div>
                 );
               })}
