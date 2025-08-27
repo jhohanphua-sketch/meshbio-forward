@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, CheckCircle } from 'lucide-react';
 const CTASection = () => {
-  const benefits = ['Free 30-minute consultation', 'Personalized demo with your data', 'ROI calculation for your organization', 'Implementation roadmap discussion'];
+  const benefits = ['Free 30-minute consultation', 'Personalised demo with your data', 'ROI calculation for your organisation', 'Implementation roadmap discussion'];
   return <section className="py-20 bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">

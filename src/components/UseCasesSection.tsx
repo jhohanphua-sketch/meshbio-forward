@@ -8,8 +8,8 @@ const UseCasesSection = () => {
       description: 'Save clinician time with automated reporting and streamlined diagnostic processes.',
       benefits: [
         'Reduce manual report generation by 90%',
-        'Standardize diagnostic workflows',
-        'Minimize administrative burden',
+        'Standardise diagnostic workflows',
+        'Minimise administrative burden',
         'Focus more time on patient care'
       ],
       icon: Zap,
@@ -17,9 +17,9 @@ const UseCasesSection = () => {
     },
     {
       title: 'Patient Engagement',
-      description: 'Improve adherence with clear, personalized insights and actionable recommendations.',
+      description: 'Improve adherence with clear, personalised insights and actionable recommendations.',
       benefits: [
-        'Personalized health reports',
+        'Personalised health reports',
         'Clear risk communication',
         'Treatment adherence tracking',
         'Improved patient outcomes'

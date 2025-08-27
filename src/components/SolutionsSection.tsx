@@ -21,11 +21,11 @@ const SolutionsSection = () => {
     {
       name: 'HealthVector®',
       subtitle: 'Diabetes Prediction',
-      description: 'Predictive disease progression tool for managing chronic conditions and optimizing patient outcomes.',
+      description: 'Predictive disease progression tool for managing chronic conditions and optimising patient outcomes.',
       features: [
         'Disease progression modeling',
-        'Personalized risk assessment',
-        'Treatment optimization',
+        'Personalised risk assessment',
+        'Treatment optimisation',
         'Patient engagement tools'
       ],
       icon: TrendingUp,
@@ -36,7 +36,7 @@ const SolutionsSection = () => {
   const workflow = [
     { step: 'Data Collection', description: 'Gather patient health data from multiple sources', icon: Users },
     { step: 'AI Analysis', description: 'Process data through advanced machine learning models', icon: Brain },
-    { step: 'Actionable Insights', description: 'Generate personalized recommendations and reports', icon: Shield }
+    { step: 'Actionable Insights', description: 'Generate personalised recommendations and reports', icon: Shield }
   ];
 
   return (

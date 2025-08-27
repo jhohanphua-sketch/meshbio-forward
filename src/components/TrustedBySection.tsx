@@ -12,7 +12,7 @@ const TrustedBySection = () => {
   const partners = [
     'Enterprise Singapore',
     'Singapore Health Group',
-    'Asian Medical Center',
+    'Asian Medical Centre',
     'Health Innovation Lab',
     'Digital Health Alliance',
     'Medical Technology Partners'
@@ -57,7 +57,7 @@ const TrustedBySection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Trusted by Leading Organizations
+            Trusted by Leading Organisations
           </h2>
           
           <Carousel className="w-full max-w-6xl mx-auto">

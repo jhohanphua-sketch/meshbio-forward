@@ -62,7 +62,7 @@ const MetricsSection = () => {
       value: 90,
       suffix: '%',
       label: 'Faster Screening',
-      description: 'workflow optimization'
+      description: 'workflow optimisation'
     }
   ];
 

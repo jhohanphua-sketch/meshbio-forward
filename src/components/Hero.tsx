@@ -68,7 +68,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             Empowering clinicians with real-time insights to detect chronic diseases earlier, 
-            optimize workflows, and engage patients effectively.
+            optimise workflows, and engage patients effectively.
           </motion.p>
 
           <motion.div 
