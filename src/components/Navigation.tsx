@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,11 +22,17 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { href: '#solutions', label: 'Solutions' },
-    { href: '#use-cases', label: 'Use Cases' },
-    { href: '#case-studies', label: 'Case Studies' },
-    { href: '#about', label: 'About' },
+  const patientsMenuItems = [
+    { href: '#healthvector-diabetes', label: 'HealthVector® Diabetes' },
+  ];
+
+  const solutionsMenuItems = [
+    { href: '#dara', label: 'DARA' },
+    { href: '#health-screening', label: 'Health Screening' },
+    { href: '#result-interpretation', label: 'Result Interpretation' },
+    { href: '#referral', label: 'Referral' },
+    { href: '#healthvector-diabetes', label: 'HealthVector® Diabetes' },
+    { href: '#chronic-disease-management', label: 'Chronic Disease Management' },
   ];
 
   return (
@@ -42,25 +54,66 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-              >
-                {item.label}
-              </motion.a>
-            ))}
+            {/* Patients Dropdown */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0 * 0.1, duration: 0.5 }}
+            >
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                  <span>Patients</span>
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {patientsMenuItems.map((item) => (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <a href={item.href}>{item.label}</a>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </motion.div>
+
+            {/* Solutions Dropdown */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 * 0.1, duration: 0.5 }}
+            >
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                  <span>Solutions</span>
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {solutionsMenuItems.map((item) => (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <a href={item.href}>{item.label}</a>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </motion.div>
+
+            {/* About Link */}
+            <motion.a
+              href="#about"
+              className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2 * 0.1, duration: 0.5 }}
+            >
+              About
+            </motion.a>
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
               <Button className="btn-cta">
-                Book Demo
+                Book a Demo
               </Button>
             </motion.div>
           </div>
@@ -85,18 +138,47 @@ const Navigation = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="py-4 space-y-4">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="block text-foreground hover:text-primary transition-colors duration-200 font-medium"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
+                {/* Mobile Patients Menu */}
+                <div className="space-y-2">
+                  <div className="font-medium text-foreground">Patients</div>
+                  {patientsMenuItems.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="block pl-4 text-foreground hover:text-primary transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+
+                {/* Mobile Solutions Menu */}
+                <div className="space-y-2">
+                  <div className="font-medium text-foreground">Solutions</div>
+                  {solutionsMenuItems.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="block pl-4 text-foreground hover:text-primary transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+
+                {/* Mobile About Link */}
+                <a
+                  href="#about"
+                  className="block text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About
+                </a>
+
                 <Button className="btn-cta w-full mt-4">
-                  Book Demo
+                  Book a Demo
                 </Button>
               </div>
             </motion.div>
