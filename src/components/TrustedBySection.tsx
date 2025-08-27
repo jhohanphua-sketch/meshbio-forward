@@ -100,32 +100,37 @@ const TrustedBySection = () => {
             Recognition & Media Coverage
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {recognitions.map((recognition, index) => {
-              const IconComponent = recognition.icon;
-              return (
-                <motion.div
-                  key={index}
-                  className="card-feature text-center group cursor-pointer"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="h-8 w-8 text-white" />
-                  </div>
-                  
-                  <div className="text-xs text-primary font-semibold mb-2">{recognition.year}</div>
-                  <h3 className="text-lg font-bold mb-3">{recognition.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {recognition.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+          <Carousel className="w-full max-w-6xl mx-auto">
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {recognitions.map((recognition, index) => {
+                const IconComponent = recognition.icon;
+                return (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/1 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                    <motion.div
+                      className="card-feature text-center group cursor-pointer h-full"
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1, duration: 0.6 }}
+                      whileHover={{ y: -5 }}
+                    >
+                      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="h-8 w-8 text-white" />
+                      </div>
+                      
+                      <div className="text-xs text-primary font-semibold mb-2">{recognition.year}</div>
+                      <h3 className="text-lg font-bold mb-3">{recognition.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {recognition.description}
+                      </p>
+                    </motion.div>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </motion.div>
 
         {/* Trust indicators */}
