@@ -28,7 +28,7 @@ const Navigation = () => {
 
   const solutionsMenuItems = [
     { href: '#dara', label: 'DARA' },
-    { href: '#health-screening', label: 'Health Screening' },
+    { href: '/health-screening', label: 'Health Screening' },
     { href: '#result-interpretation', label: 'Result Interpretation' },
     { href: '#referral', label: 'Referral' },
     { href: '#healthvector-diabetes', label: 'HealthVector® Diabetes' },
